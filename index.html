@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <title>markdown-editor</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="//at.alicdn.com/t/font_2626328_1jx8pm4lc95.css"
+    />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+
+  <body>
+    <div class="mx-auto min-h-screen relative bg-gray-50 flex flex-col">
+      <!-- mobile、pc: 标题 -->
+      <div class="title min-w-full py-1 flex space-x-2 pr-2">
+        <input
+          id="title"
+          type="text"
+          class="min-h-full border-solid border-b outline-none px-2 flex-1"
+          placeholder="标题"
+        />
+        <div class="md:hidden">
+          <button
+            id="editBtn"
+            class="w-20 py-1 border border-transparent shadow-sm rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+          >
+            编辑
+          </button>
+          <button
+            id="saveBtn"
+            class="w-20 py-1 border border-transparent shadow-sm rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
+            保存
+          </button>
+        </div>
+      </div>
+      <!-- 
+            moblie： 预览 和 编辑
+            pc: 工具栏、预览、编辑
+          -->
+      <div class="content min-w-full md:bottom-0 flex flex-col flex-1">
+        <div
+          class="toolbar align-baseline min-w-full px-2 space-x-4 hidden md:block py-1 bg-gray-100"
+        >
+          <!-- <i class="iconfont icon-bold cursor-pointer hover:bg-gray-600"></i>
+          <i class="iconfont icon-strike cursor-pointer hover:bg-gray-600"></i>
+          <i
+            class="iconfont icon-underline cursor-pointer hover:bg-gray-600"
+          ></i>
+          <i class="iconfont icon-list cursor-pointer hover:bg-gray-600"></i>
+          <i
+            class="iconfont icon-editor-list-order cursor-pointer hover:bg-gray-600"
+          ></i>
+          <i
+            class="iconfont icon-quoteleft cursor-pointer hover:bg-gray-600"
+          ></i> -->
+        </div>
+        <div class="flex-1 relative">
+          <div class="absolute inset-0 md:grid grid-cols-2">
+            <textarea
+              id="editor"
+              class="editor w-full h-full bg-black outline-none resize-none px-2 pb-2 text-white hidden md:block"
+            ></textarea>
+            <div
+              id="preview"
+              class="preview w-full h-full px-2 bg-white overflow-y-auto pb-2"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <!-- moblie： 工具栏 -->
+      <div
+        class="toolbar align-baseline min-w-full bottom-0 px-4 space-x-4 md:hidden py-1 bg-gray-100"
+      >
+        <!-- <i class="iconfont icon-bold cursor-pointer hover:bg-gray-600"></i>
+        <i class="iconfont icon-strike cursor-pointer hover:bg-gray-600"></i>
+        <i class="iconfont icon-underline cursor-pointer hover:bg-gray-600"></i>
+        <i class="iconfont icon-list cursor-pointer hover:bg-gray-600"></i>
+        <i
+          class="iconfont icon-editor-list-order cursor-pointer hover:bg-gray-600"
+        ></i>
+        <i class="iconfont icon-quoteleft cursor-pointer hover:bg-gray-600"></i> -->
+      </div>
+    </div>
+
+    <script src="./src/index.ts"></script>
+  </body>
+</html>

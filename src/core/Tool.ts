@@ -1,0 +1,46 @@
+import { ToolActions } from "./types";
+
+/**
+ * 创建 工具
+ * 相当于 redux 中 createAction
+ */
+export class Tool {
+  private _toolDom: HTMLElement = document.createElement("i");
+  constructor(
+    private toolName: string,
+    private icon: string,
+    private _toolType: ToolActions
+  ) {
+    this._toolDom.classList.add(
+      "iconfont",
+      this.icon,
+      "cursor-pointer",
+      "hover:bg-gray-600"
+    );
+  }
+
+  public get toolDom(): HTMLSpanElement {
+    return this._toolDom;
+  }
+
+  public get toolType(): ToolActions {
+    return this._toolType;
+  }
+
+  // public bindClickEvent(fn: (e: Event) => void) {
+  //   this._toolDom.addEventListener("click", fn);
+  // }
+}
+// 创建的工具功能应该 和 EditorArea 的功能相对应
+// new Tool() 类似于 redux action
+// EditorArea 类似于 redux reducers
+// tool click 类似于 redux dispatch
+
+export default [
+  // 字体变粗
+  new Tool("加粗", "icon-bold", ToolActions.FontBlod),
+  // 字体斜体
+  new Tool("斜体", "icon-italic", ToolActions.FontItalic),
+  // del 线
+  new Tool("删除线", "icon-strike", ToolActions.FontDel)
+];
