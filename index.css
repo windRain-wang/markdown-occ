@@ -12,3 +12,16 @@
 .toolbar .iconfont:active {
   background-color: #9ca3af;
 }
+
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(151, 151, 151);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -2,8 +2,8 @@ export default class SwitchBtn {
   constructor(
     private saveBtn: HTMLButtonElement,
     private editorBtn: HTMLButtonElement,
-    private editorDom: HTMLTextAreaElement,
-    private showDom: HTMLElement
+    private editorWrap: HTMLDivElement,
+    private showDom: HTMLDivElement
   ) {
     this.saveBtn.style.display = "none";
     this.bindEvent();
@@ -12,21 +12,21 @@ export default class SwitchBtn {
   toEdit() {
     this.saveBtn.style.display = "inline-block";
     this.editorBtn.style.display = "none";
-    this.editorDom.style.display = "block";
+    this.editorWrap.style.display = "flex";
     this.showDom.style.display = "none";
   }
 
   toPreview() {
     this.saveBtn.style.display = "none";
     this.editorBtn.style.display = "inline-block";
-    this.editorDom.style.display = "none";
+    this.editorWrap.style.display = "none";
     this.showDom.style.display = "block";
   }
 
   bothShow() {
     this.saveBtn.style.display = "none";
     this.editorBtn.style.display = "none";
-    this.editorDom.style.display = "block";
+    this.editorWrap.style.display = "flex";
     this.showDom.style.display = "block";
   }
 

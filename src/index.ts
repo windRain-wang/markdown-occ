@@ -1,3 +1,3 @@
 import "../markdown.scss";
-import { creator } from "./core/editor";
-creator();
+import { Editor } from "./core/Editor";
+new Editor();
